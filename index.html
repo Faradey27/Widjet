@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru" xml:lang="ru">  
+  <head>  
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />   
+    <link rel="stylesheet" type="text/css" href="style.css"/>  
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,900,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
+    <title>
+    </title>    
+<script>
+      function transform() {
+      var enterNum = Number(document.getElementById("enter_field1").value);
+      var baseFrom = Number(document.getElementById('enter_field2').value);   // система счисления в которой задано число
+      var baseTo = Number(document.getElementById('enter_field3').value);   // система счисления в которую переводим
+      var tenNum = parseInt(enterNum, baseFrom); //переводим в десятичную систему из заданой
+      var newNum = tenNum.toString(baseTo);  
+       document.getElementById("rezult").innerHTML=newNum;
+      }
+    </script>  
+  </head>  
+  <body> 
+   <div class="form_block">
+    <div class="nam">
+      <h1>Перевод чисел между произвольными системами счисления</h1>
+    </div> 
+  <div class="menus">
+    <div class="control">
+     <label for="enter_field1">Исходное число</label>  
+     <div class="enters">
+      <input id="enter_field1" value="0"/">
+     </div>
+    </div> 
+    <div class="control">
+      <label for="enter_field2">С какой системы будем переводить?</label>
+      <div class="enters">
+         <input id="enter_field2" value="10"/>
+      </div>
+    </div>
+    <div class="control">
+      <label for="enter_field3">В какую систему перевести?</label> 
+      <div class="enters">
+        <input id="enter_field3" value="2"/>
+      </div>
+    </div>  
+   </div>
+    <div class="greyline">
+          <a class="btn but pull-right" onclick="transform()" href="#"><span>Рассчитать</span></a>
+    </div>
+    <div class="nam">
+      <strong>Результаты:</strong>
+    </div> 
+    <div class="rez">
+      <label id="rezult"></label>
+    </div> 
+      </div>
+  </body>
+</html>
